@@ -7,8 +7,6 @@ import { ButtonCard } from "./ButtonCard";
 
 import dat from "../data";
 import { useGetLessonBySlugQuery } from "../graphql/generated";
-import { createRef, useEffect, useState } from "react";
-import YouTube from "react-youtube";
 
 interface VideoProps {
   lessonSlug: string;
@@ -36,19 +34,10 @@ export function Video(props: VideoProps) {
     <div className="flex-1">
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
-          {/* <Player>
+          <Player>
             <Youtube videoId='y4ltLH9iK8E' key={data.lesson.videoId}/>
             <DefaultUi />
-          </Player> */}
-            <iframe
-              width="100%"
-              height="100%"
-              src={data.lesson.videoId}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-            
-
+          </Player>
         </div>
       </div>
 
