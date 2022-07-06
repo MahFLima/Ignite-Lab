@@ -9,7 +9,7 @@ export function ButtonCard(props: ButtonCardProps) {
   return (
     <a
       href=""
-      className="flex justify-between bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors mt-5"
+      className=" bg-gray-700 rounded overflow-hidden flex justify-between items-stretch gap-6 hover:bg-gray-600 transition-colors mt-5"
     >
       <div className="bg-green-700 p-6 flex items-center justify-center">
         {props.title == "Material complementar" ? <FileArrowDown size={40} /> : <Image size={40} />}

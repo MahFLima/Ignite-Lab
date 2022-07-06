@@ -1,4 +1,4 @@
-import { DefaultUi, Player, Youtube } from "@vime/react";
+import { Dailymotion, DefaultUi, Player, Youtube } from "@vime/react";
 import { DiscordLogo, Lightning } from "phosphor-react";
 
 import "@vime/core/themes/default.css";
@@ -7,14 +7,13 @@ import { ButtonCard } from "./ButtonCard";
 
 import dat from "../data";
 import { useGetLessonBySlugQuery } from "../graphql/generated";
+import Skeleton from "react-loading-skeleton";
 
 interface VideoProps {
   lessonSlug: string;
 }
 
-
 export function Video(props: VideoProps) {
-
   const { data } = useGetLessonBySlugQuery({
     variables: {
       slug: props.lessonSlug,
@@ -24,11 +23,10 @@ export function Video(props: VideoProps) {
   if (!data || !data.lesson) {
     return (
       <div className="flex-1">
-        <p>Carregando...</p>
+        <Skeleton width={210} height={118} />
       </div>
     );
   }
-
 
   return (
     <div className="flex-1">

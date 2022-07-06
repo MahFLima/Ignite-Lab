@@ -40,7 +40,7 @@ export function Event() {
           <div className="p-6 w-full"><Sidebar /></div>
         ) : (
           <>
-            {slug ? <Video lessonSlug={slug} /> : <div className="flex-1" />}
+            {slug ? <Video lessonSlug={slug} /> : <Video lessonSlug='abertura' />}
             <div className=" hidden lg:flex flex-col w-[348px] bg-gray-700 p-6 border-l border-gray-600">
               <Sidebar />
             </div>
